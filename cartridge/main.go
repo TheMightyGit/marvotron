@@ -114,7 +114,7 @@ func (p *Player) Setup() {
 		Min: p.Pos.Sub(image.Point{X: 3, Y: 4}),
 		Max: image.Point{X: 6, Y: 8},
 	})
-	marvlib.SpritesGet(p.SpriteId).ChangeViewport(image.Point{X: 10 * 6, Y: 14 * 8})
+	marvlib.API.SpritesGet(p.SpriteId).ChangeViewport(image.Point{X: 10 * 6, Y: 14 * 8})
 }
 
 const (
@@ -136,32 +136,32 @@ const (
 )
 
 func isMoveLeft() bool {
-	return marvlib.API.InputIsKeyDown(marv.KeyA) ||
-		marvlib.API.InputIsKeyDown(marv.KeyArrowLeft) // ||
+	return marvlib.API.InputIsKeyDown(marvlib.KeyA) ||
+		marvlib.API.InputIsKeyDown(marvlib.KeyArrowLeft) // ||
 	// (marv.Input.GamepadButtonStates[0].Mapped&MAPPED_GAMEPAD_BIT_DPAD_LEFT != 0) ||
 	// (marv.Input.GamepadButtonStates[1].Mapped&MAPPED_GAMEPAD_BIT_DPAD_LEFT != 0) ||
 	// (marv.Input.GamepadButtonStates[2].Mapped&MAPPED_GAMEPAD_BIT_DPAD_LEFT != 0) ||
 	// (marv.Input.GamepadButtonStates[3].Mapped&MAPPED_GAMEPAD_BIT_DPAD_LEFT != 0)
 }
 func isMoveRight() bool {
-	return marvlib.API.InputIsKeyDown(marv.KeyD) ||
-		marvlib.API.InputIsKeyDown(marv.KeyArrowRight) // ||
+	return marvlib.API.InputIsKeyDown(marvlib.KeyD) ||
+		marvlib.API.InputIsKeyDown(marvlib.KeyArrowRight) // ||
 	// (marv.Input.GamepadButtonStates[0].Mapped&MAPPED_GAMEPAD_BIT_DPAD_RIGHT != 0) ||
 	// (marv.Input.GamepadButtonStates[1].Mapped&MAPPED_GAMEPAD_BIT_DPAD_RIGHT != 0) ||
 	// (marv.Input.GamepadButtonStates[2].Mapped&MAPPED_GAMEPAD_BIT_DPAD_RIGHT != 0) ||
 	// (marv.Input.GamepadButtonStates[3].Mapped&MAPPED_GAMEPAD_BIT_DPAD_RIGHT != 0)
 }
 func isMoveUp() bool {
-	return marvlib.API.InputIsKeyDown(marv.KeyW) ||
-		marvlib.API.InputIsKeyDown(marv.KeyArrowUp) // ||
+	return marvlib.API.InputIsKeyDown(marvlib.KeyW) ||
+		marvlib.API.InputIsKeyDown(marvlib.KeyArrowUp) // ||
 	// (marv.Input.GamepadButtonStates[0].Mapped&MAPPED_GAMEPAD_BIT_DPAD_UP != 0) ||
 	// (marv.Input.GamepadButtonStates[1].Mapped&MAPPED_GAMEPAD_BIT_DPAD_UP != 0) ||
 	// (marv.Input.GamepadButtonStates[2].Mapped&MAPPED_GAMEPAD_BIT_DPAD_UP != 0) ||
 	// (marv.Input.GamepadButtonStates[3].Mapped&MAPPED_GAMEPAD_BIT_DPAD_UP != 0)
 }
 func isMoveDown() bool {
-	return marvlib.API.InputIsKeyDown(marv.KeyS) ||
-		marvlib.API.InputIsKeyDown(marv.KeyArrowDown) // ||
+	return marvlib.API.InputIsKeyDown(marvlib.KeyS) ||
+		marvlib.API.InputIsKeyDown(marvlib.KeyArrowDown) // ||
 	// (marv.Input.GamepadButtonStates[0].Mapped&MAPPED_GAMEPAD_BIT_DPAD_DOWN != 0) ||
 	// (marv.Input.GamepadButtonStates[1].Mapped&MAPPED_GAMEPAD_BIT_DPAD_DOWN != 0) ||
 	// (marv.Input.GamepadButtonStates[2].Mapped&MAPPED_GAMEPAD_BIT_DPAD_DOWN != 0) ||
