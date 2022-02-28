@@ -64,9 +64,9 @@ func (b *Baddie) MoveBrain() {
 	timeout := time.NewTicker(16 * time.Millisecond)
 	for {
 		select {
-		//		case <-marv.ctx.Done():
-		//			fmt.Println(b.SpriteId, "CANCELLED!!!!!!!!!!!!!!!!!!")
-		//			return
+		case <-marvib.API.ConsoleResetChan():
+			fmt.Println(b.SpriteId, "CANCELLED!!!!!!!!!!!!!!!!!!")
+			return
 		case <-timeout.C:
 			if frame < 40 {
 				// wobble on the spot
@@ -238,9 +238,9 @@ func addBaddiesOverTime() {
 	timeout := time.NewTicker(1 * time.Second)
 	for {
 		select {
-		//		case <-marv.ctx.Done():
-		//			fmt.Println("CANCELLED!!!!!!!!!!!!!!!!!!")
-		//			return
+		case <-marvib.API.ConsoleResetChan():
+			fmt.Println("CANCELLED!!!!!!!!!!!!!!!!!!")
+			return
 		case <-timeout.C:
 			if len(baddies) < SpriteBaddieEnd-SpriteBaddieStart { // any baddies left to add?
 				addBaddie()
