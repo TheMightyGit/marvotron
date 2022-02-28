@@ -2,6 +2,7 @@ package cartridge
 
 import (
 	"embed"
+	"fmt"
 	"image"
 	"math"
 	"math/rand"
@@ -64,7 +65,7 @@ func (b *Baddie) MoveBrain() {
 	timeout := time.NewTicker(16 * time.Millisecond)
 	for {
 		select {
-		case <-marvib.API.ConsoleResetChan():
+		case <-marvlib.API.ConsoleResetChan():
 			fmt.Println(b.SpriteId, "CANCELLED!!!!!!!!!!!!!!!!!!")
 			return
 		case <-timeout.C:
