@@ -1,4 +1,4 @@
-package code
+package cartridge
 
 import (
 	"embed"
