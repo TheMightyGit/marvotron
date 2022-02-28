@@ -239,7 +239,7 @@ func addBaddiesOverTime() {
 	timeout := time.NewTicker(1 * time.Second)
 	for {
 		select {
-		case <-marvib.API.ConsoleResetChan():
+		case <-marvlib.API.ConsoleResetChan():
 			fmt.Println("CANCELLED!!!!!!!!!!!!!!!!!!")
 			return
 		case <-timeout.C:
