@@ -2,7 +2,6 @@ package code
 
 import (
 	"embed"
-	"fmt"
 	"image"
 	"math"
 	"math/rand"
@@ -220,7 +219,7 @@ func (p *Player) Update() {
 		})
 		marvlib.API.SpritesGet(p.SpriteId).ChangeViewport(image.Point{X: 3 * 6, Y: 15 * 8}) // ghost graphic
 	} else {
-		marvilb.API.SpritesGet(p.SpriteId).ChangePos(image.Rectangle{
+		marvlib.API.SpritesGet(p.SpriteId).ChangePos(image.Rectangle{
 			Min: p.Pos.Sub(image.Point{X: 3, Y: 4}),
 			Max: image.Point{X: 6, Y: 8},
 		}) // player graphic
@@ -286,7 +285,7 @@ func Start() {
 	*/
 
 	// marv.ModBanks[0].Play()
-	marvib.API.SfxBanksGet(0).PlayLooped()
+	marvlib.API.SfxBanksGet(0).PlayLooped()
 
 	setupArea()
 	setupBackground()
